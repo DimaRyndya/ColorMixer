@@ -49,7 +49,7 @@ struct SliderView: View {
     var body: some View {
         HStack {
             Text("\(lround(value))")
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .frame(width: 35, height: 35)
             Slider(value: $value, in: 0...255, step: 1)
                 .accentColor(sliderColor)
@@ -58,6 +58,7 @@ struct SliderView: View {
                     value = Double(typedValue)!
                 } else {
                     alertPresented.toggle()
+                    value = 0.0
                 }
                 
             })
